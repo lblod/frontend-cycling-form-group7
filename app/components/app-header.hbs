@@ -1,0 +1,20 @@
+<AuMainHeader
+  @brandLink="https://www.vlaanderen.be/nl"
+  @homeRoute=""
+  @appTitle="Cycling form group 7"
+  @contactRoute=""
+>
+  {{#if this.session.isAuthenticated}}
+    {{! Add some logic showing actual username or sth }}
+    Username
+  {{else}}
+    <AuLink
+      @route="login"
+      @skin={{if @isCompact "primary" "button"}}
+      @icon="login"
+    >
+      Meld je aan
+    </AuLink>
+  {{/if}}
+  {{outlet}}
+</AuMainHeader>
