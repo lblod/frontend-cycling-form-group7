@@ -3,40 +3,40 @@
     <c.header>
       <AuDataTableThSortable
         @class="au-c-data-table__header-title"
-        @field="event.name"
+        @field="dossier.name"
         @currentSorting={{this.sort}}
         @label="Naam"
       />
       <AuDataTableThSortable
         @class="au-c-data-table__header-title"
-        @field="event.organizedBy.name"
+        @field="dossier.organizedBy.name"
         @currentSorting={{this.sort}}
         @label="Organisatie"
       />
       <AuDataTableThSortable
         @class="au-c-data-table__header-title"
-        @field="event.date"
+        @field="dossier.date"
         @currentSorting={{this.sort}}
         @label="Datum"
       />
       <AuDataTableThSortable
         @class="au-c-data-table__header-title"
-        @field="event.status"
+        @field="dossier.status"
         @currentSorting={{this.sort}}
         @label="Status"
       />
     </c.header>
-    <c.body as |event|>
+    <c.body as |dossier|>
       <td>
-        <AuLink @route="events.event" @model={{event.id}}>
-          {{event.name}}
+        <AuLink @route="dossiers.dossier" @model={{dossier.id}}>
+          {{dossier.name}}
         </AuLink>
       </td>
       <td>
-        {{event.organizedBy.name}}
+        {{dossier.organizedBy.name}}
       </td>
       <td>
-        {{event.date}}
+        {{dossier.date}}
       </td>
       <td>
         <AuPill @skin="warning">Open</AuPill>
