@@ -1,4 +1,27 @@
 {{page-title "FrontendCyclingFormGroup7"}}
 
-<AppHeader />
-{{outlet}}
+<AuApp>
+  <AppHeader />
+  <AuMainContainer as |m|>
+    <m.sidebar>
+      <div class="au-c-sidebar">
+        <div class="au-c-sidebar__content">
+          <nav>
+            <ul class="au-c-list-navigation">
+              <li class="au-c-list-navigation__item">
+                <AuNavigationLink @linkRoute="events">
+                  Evenementen
+                </AuNavigationLink>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </m.sidebar>
+    <m.content @scroll={{true}}>
+      <div class="au-d-component-block au-d-component-block--overflow">
+        {{outlet}}
+      </div>
+    </m.content>
+  </AuMainContainer>
+</AuApp>

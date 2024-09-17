@@ -5,8 +5,8 @@
   @contactRoute=""
 >
   {{#if this.session.isAuthenticated}}
-    {{! Add some logic showing actual username or sth }}
-    Username
+    {{! TODO: Add some logic showing actual username or sth }}
+    Municipality name
   {{else}}
     <AuLink
       @route="login"
@@ -16,5 +16,4 @@
       Meld je aan
     </AuLink>
   {{/if}}
-  {{outlet}}
 </AuMainHeader>
