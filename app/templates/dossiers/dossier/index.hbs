@@ -10,6 +10,7 @@
       </card.header>
       <card.content>
         <ul>
+          <li>Status: {{@model.zaak.procedurestap.name}}</li>
           <li>Openingsdatum: {{date-format @model.zaak.openingDate}}</li>
           <li>Sluitingsdatum: {{date-format @model.zaak.closingDate}}</li>
         </ul>
