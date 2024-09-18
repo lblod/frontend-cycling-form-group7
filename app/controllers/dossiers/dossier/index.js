@@ -8,7 +8,13 @@ export default class DossiersDossierIndexController extends Controller {
 
   @action
   async startProcessing() {
-    // TODO: set procedurestap
+    const approvedStatus = await this.store.findRecord(
+      'procedurestap',
+      PROCEDURE_STEPS.PROCESSING,
+    );
+    this.model.zaak.procedurestap = approvedStatus;
+
+    this.model.zaak.save();
   }
 
   @action
