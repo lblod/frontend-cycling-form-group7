@@ -8,4 +8,10 @@ export default class RechtModel extends Model {
     async: true,
   })
   aanvraag;
+
+  @belongsTo('activiteit', {
+    inverse: 'recht',
+    async: true,
+  })
+  activiteit;
 }

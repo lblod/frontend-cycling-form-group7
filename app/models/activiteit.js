@@ -14,4 +14,10 @@ export default class ActiviteitModel extends Model {
     async: true,
   })
   interval;
+
+  @belongsTo('recht', {
+    inverse: 'activiteit',
+    async: true,
+  })
+  recht;
 }

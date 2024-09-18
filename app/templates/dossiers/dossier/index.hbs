@@ -26,8 +26,31 @@
         </AuHeading>
       </card.header>
       <card.content>
-        Recht:
-        {{@model.dossier.aanvraag.recht.name}}
+        Placeholder
+      </card.content>
+    </AuCard>
+
+    <AuCard @standOut="true" as |card|>
+      <card.header>
+        <AuHeading @level="2" @skin="4">
+          {{@model.dossier.aanvraag.recht.name}}
+          (Recht)
+        </AuHeading>
+      </card.header>
+      <card.content>
+        Placeholder
+      </card.content>
+    </AuCard>
+
+    <AuCard @standOut="true" as |card|>
+      <card.header>
+        <AuHeading @level="2" @skin="4">
+          {{@model.dossier.aanvraag.recht.activiteit.name}}
+          (Activiteit)
+        </AuHeading>
+      </card.header>
+      <card.content>
+        Placeholder
       </card.content>
     </AuCard>
 

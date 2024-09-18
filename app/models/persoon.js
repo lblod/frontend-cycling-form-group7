@@ -9,7 +9,7 @@ export default class PersoonModel extends Model {
   @attr('string') organisatie;
 
   @hasMany('activiteit', {
-    inverse: involvedPerson,
+    inverse: 'organisator',
     async: true,
   })
   activiteiten;

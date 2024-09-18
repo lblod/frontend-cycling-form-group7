@@ -11,6 +11,7 @@ export default class DossiersIndexRoute extends Route {
         'is-neerslag-van.procedurestap',
         'aanvraag',
         'aanvraag.recht',
+        'aanvraag.recht.activiteit',
       ].join(),
     });
 
