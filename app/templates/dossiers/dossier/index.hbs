@@ -4,14 +4,14 @@
     <AuCard @standOut="true" as |card|>
       <card.header>
         <AuHeading @level="2" @skin="4">
-          {{@model.name}}
+          {{@model.dossier.name}}
         </AuHeading>
-        {{@model.isNeerslagVan.name}}
+        {{@model.zaak.name}}
       </card.header>
       <card.content>
         <ul>
-          <li>Openingsdatum: {{@model.isNeerslagVan.openingDate}}</li>
-          <li>Sluitingsdatum: {{@model.isNeerslagVan.closingDate}}</li>
+          <li>Openingsdatum: {{date-format @model.zaak.openingDate}}</li>
+          <li>Sluitingsdatum: {{date-format @model.zaak.closingDate}}</li>
         </ul>
       </card.content>
     </AuCard>
