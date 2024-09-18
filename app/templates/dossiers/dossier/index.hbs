@@ -48,6 +48,18 @@
           {{@model.dossier.aanvraag.recht.activiteit.name}}
           (Activiteit)
         </AuHeading>
+        <ul>
+          <li>Naam:
+            {{@model.dossier.aanvraag.recht.activiteit.tijdsbestek.name}}</li>
+          <li>Begindatum:
+            {{date-format
+              @model.dossier.aanvraag.recht.activiteit.tijdsbestek.startTime
+            }}</li>
+          <li>Einddatum:
+            {{date-format
+              @model.dossier.aanvraag.recht.activiteit.tijdsbestek.endTime
+            }}</li>
+        </ul>
       </card.header>
       <card.content>
         Placeholder

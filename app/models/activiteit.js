@@ -9,8 +9,8 @@ export default class ActiviteitModel extends Model {
   })
   organisator;
 
-  @belongsTo('interval', {
-    inverse: 'activity',
+  @belongsTo('tijdsbestek', {
+    inverse: 'activiteit',
     async: true,
   })
   interval;

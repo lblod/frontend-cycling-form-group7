@@ -12,6 +12,7 @@ export default class DossiersIndexRoute extends Route {
         'aanvraag',
         'aanvraag.recht',
         'aanvraag.recht.activiteit',
+        'aanvraag.recht.activiteit.tijdsbestek',
       ].join(),
     });
 
