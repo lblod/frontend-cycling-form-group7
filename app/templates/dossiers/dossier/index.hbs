@@ -1,6 +1,5 @@
 <div class="au-c-body-container au-c-body-container--scroll">
   <div class="au-o-box au-o-flow au-o-flow--large">
-
     <AuCard @standOut="true" as |card|>
       <card.header>
         <AuHeading @level="2" @skin="4">
@@ -16,6 +15,18 @@
         </ul>
       </card.content>
     </AuCard>
+
+    <AuCard @standOut="true" as |card|>
+      <card.header>
+        <AuHeading @level="2" @skin="4">
+          {{@model.dossier.aanvraag.name}}
+        </AuHeading>
+      </card.header>
+      <card.content>
+        Placeholder
+      </card.content>
+    </AuCard>
+
     <AuButton {{on "click" this.startProcessing}}>Start dossier</AuButton>
     <AuButton {{on "click" this.approve}}>Goedkeuren</AuButton>
   </div>

@@ -6,7 +6,11 @@ export default class DossiersIndexRoute extends Route {
 
   async model() {
     const model = await this.store.findAll('dossier', {
-      include: ['is-neerslag-van', 'is-neerslag-van.procedurestap'].join(),
+      include: [
+        'is-neerslag-van',
+        'is-neerslag-van.procedurestap',
+        'aanvraag',
+      ].join(),
     });
 
     return model;

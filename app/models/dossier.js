@@ -8,4 +8,10 @@ export default class DossierModel extends Model {
     async: true,
   })
   isNeerslagVan;
+
+  @belongsTo('aanvraag', {
+    inverse: 'dossier',
+    async: true,
+  })
+  aanvraag;
 }

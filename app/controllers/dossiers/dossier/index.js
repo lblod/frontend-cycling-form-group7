@@ -10,7 +10,7 @@ export default class DossiersDossierIndexController extends Controller {
   async startProcessing() {
     const approvedStatus = await this.store.findRecord(
       'procedurestap',
-      PROCEDURE_STEPS.PROCESSING,
+      PROCEDURE_STEPS.PROCESSING
     );
     this.model.zaak.procedurestap = approvedStatus;
 
@@ -23,7 +23,7 @@ export default class DossiersDossierIndexController extends Controller {
 
     const approvedStatus = await this.store.findRecord(
       'procedurestap',
-      PROCEDURE_STEPS.APPROVED,
+      PROCEDURE_STEPS.APPROVED
     );
     this.model.zaak.procedurestap = approvedStatus;
 
