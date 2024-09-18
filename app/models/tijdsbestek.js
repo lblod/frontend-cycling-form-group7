@@ -1,4 +1,4 @@
-import Model from '@ember-data/model';
+import Model, { attr, belongsTo } from '@ember-data/model';
 
 export default class TijdsbestekModel extends Model {
   @attr('string') name;
