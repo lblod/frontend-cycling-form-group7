@@ -7,10 +7,23 @@ export default class DossiersDossierIndexController extends Controller {
   @service store;
 
   @action
-  async startProcessing() {
+  async backToOpen() {
+    this.model.zaak.closingDate = null;
     const approvedStatus = await this.store.findRecord(
       'procedurestap',
-      PROCEDURE_STEPS.PROCESSING
+      PROCEDURE_STEPS.OPEN,
+    );
+    this.model.zaak.procedurestap = approvedStatus;
+
+    this.model.zaak.save();
+  }
+
+  @action
+  async startProcessing() {
+    this.model.zaak.closingDate = null;
+    const approvedStatus = await this.store.findRecord(
+      'procedurestap',
+      PROCEDURE_STEPS.PROCESSING,
     );
     this.model.zaak.procedurestap = approvedStatus;
 
@@ -23,7 +36,7 @@ export default class DossiersDossierIndexController extends Controller {
 
     const approvedStatus = await this.store.findRecord(
       'procedurestap',
-      PROCEDURE_STEPS.APPROVED
+      PROCEDURE_STEPS.APPROVED,
     );
     this.model.zaak.procedurestap = approvedStatus;
 
