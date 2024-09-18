@@ -5,23 +5,29 @@
         @class="au-c-data-table__header-title"
         @field="dossier.name"
         @currentSorting={{this.sort}}
-        @label="Naam"
+        @label="Dossier"
       />
       <AuDataTableThSortable
         @class="au-c-data-table__header-title"
-        @field="dossier.organizedBy.name"
+        @field="dossier.isNeerslagVan.name"
         @currentSorting={{this.sort}}
-        @label="Organisatie"
+        @label="Zaak"
       />
       <AuDataTableThSortable
         @class="au-c-data-table__header-title"
-        @field="dossier.date"
+        @field="dossier.isNeerslagVan.openingDate"
         @currentSorting={{this.sort}}
-        @label="Datum"
+        @label="Openingsdatum"
       />
       <AuDataTableThSortable
         @class="au-c-data-table__header-title"
-        @field="dossier.status"
+        @field="dossier.isNeerslagVan.closingDate"
+        @currentSorting={{this.sort}}
+        @label="Sluitingsdatum"
+      />
+      <AuDataTableThSortable
+        @class="au-c-data-table__header-title"
+        @field="dossier.isNeerslagVan.procedurestap.name"
         @currentSorting={{this.sort}}
         @label="Status"
       />
@@ -33,13 +39,30 @@
         </AuLink>
       </td>
       <td>
-        {{dossier.organizedBy.name}}
+        {{dossier.isNeerslagVan.name}}
       </td>
       <td>
-        {{dossier.date}}
+        {{date-format dossier.isNeerslagVan.openingDate}}
       </td>
       <td>
-        <AuPill @skin="warning">Open</AuPill>
+        {{date-format dossier.isNeerslagVan.closingDate}}
+      </td>
+      <td>
+        {{#if @model.isNeerslagVan.procedurestap.isApproved}}
+          <AuPill
+            @skin="success"
+          >{{@model.isNeerslagVan.procedurestap.name}}</AuPill>
+        {{else}}
+          {{#if @model.isNeerslagVan.procedurestap.isBeingProcessed}}
+            <AuPill
+              @skin="ongoing"
+            >{{@model.isNeerslagVan.procedurestap.name}}</AuPill>
+          {{else}}
+            <AuPill
+              @skin="default"
+            >{{@model.isNeerslagVan.procedurestap.name}}</AuPill>
+          {{/if}}
+        {{/if}}
       </td>
     </c.body>
   </t.content>

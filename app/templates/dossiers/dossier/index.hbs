@@ -4,12 +4,17 @@
     <AuCard @standOut="true" as |card|>
       <card.header>
         <AuHeading @level="2" @skin="4">
-          {{this.model.name}}
+          {{@model.name}}
         </AuHeading>
+        {{@model.isNeerslagVan.name}}
       </card.header>
       <card.content>
-        {{this.model.date}}
+        <ul>
+          <li>Openingsdatum: {{@model.isNeerslagVan.openingDate}}</li>
+          <li>Sluitingsdatum: {{@model.isNeerslagVan.closingDate}}</li>
+        </ul>
       </card.content>
     </AuCard>
+    <AuButton {{on "click" this.approve}}>Goedkeuren</AuButton>
   </div>
 </div>
