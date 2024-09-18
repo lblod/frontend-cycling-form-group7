@@ -48,19 +48,19 @@
         {{date-format dossier.isNeerslagVan.closingDate}}
       </td>
       <td>
-        {{#if @model.isNeerslagVan.procedurestap.isApproved}}
+        {{#if dossier.isNeerslagVan.procedurestap.isApproved}}
           <AuPill
             @skin="success"
-          >{{@model.isNeerslagVan.procedurestap.name}}</AuPill>
+          >{{dossier.isNeerslagVan.procedurestap.name}}</AuPill>
         {{else}}
-          {{#if @model.isNeerslagVan.procedurestap.isBeingProcessed}}
+          {{#if dossier.isNeerslagVan.procedurestap.isBeingProcessed}}
             <AuPill
               @skin="ongoing"
-            >{{@model.isNeerslagVan.procedurestap.name}}</AuPill>
+            >{{dossier.isNeerslagVan.procedurestap.name}}</AuPill>
           {{else}}
             <AuPill
               @skin="default"
-            >{{@model.isNeerslagVan.procedurestap.name}}</AuPill>
+            >{{dossier.isNeerslagVan.procedurestap.name}}</AuPill>
           {{/if}}
         {{/if}}
       </td>
