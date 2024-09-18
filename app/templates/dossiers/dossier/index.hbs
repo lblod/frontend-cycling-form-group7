@@ -4,8 +4,10 @@
       <card.header>
         <AuHeading @level="2" @skin="4">
           {{@model.dossier.name}}
+          (Dossier)
         </AuHeading>
         {{@model.zaak.name}}
+        (Zaak)
       </card.header>
       <card.content>
         <ul>
@@ -20,10 +22,12 @@
       <card.header>
         <AuHeading @level="2" @skin="4">
           {{@model.dossier.aanvraag.name}}
+          (Aanvraag)
         </AuHeading>
       </card.header>
       <card.content>
-        Placeholder
+        Recht:
+        {{@model.dossier.aanvraag.recht.name}}
       </card.content>
     </AuCard>
 

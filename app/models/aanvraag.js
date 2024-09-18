@@ -8,4 +8,10 @@ export default class AanvraagModel extends Model {
     async: true,
   })
   dossier;
+
+  @belongsTo('recht', {
+    inverse: 'aanvraag',
+    async: true,
+  })
+  recht;
 }
